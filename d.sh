@@ -1576,7 +1576,9 @@ dsh_run_interactive() {
     local prompt status
     dsh_log 'Enter a task. /compact summarizes old history; /clear resets conversation and shell; Ctrl+C cancels the current request; /exit or Ctrl-D exits.'
     while :; do
-        if ! IFS= read -r -e -p 'You> ' prompt; then
+        if IFS= read -r -e -p 'You> ' prompt; then
+            :
+        else
             status=$?
             if ((status == 130)); then
                 DSH_INTERRUPTED=0
