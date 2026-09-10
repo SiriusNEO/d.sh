@@ -1,0 +1,5 @@
+session.jsonl
+session.jsonl.tmp.*
+.dsh-session.jsonl
+.dsh-session.jsonl.tmp.*
+dsh-test.sh
